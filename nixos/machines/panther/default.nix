@@ -8,22 +8,31 @@
   imports = [
     ./hardware-configuration.nix
     ./networking.nix
-    ./peripherals.nix
-    ../../profiles/default.nix
     ../../profiles/audio.nix
     #../../profiles/boot-splash.nix
-    ../../profiles/desktop.nix
+    ../../profiles/corsair-kb.nix
     ../../profiles/environment.nix
+    ../../profiles/gnome.nix
     ../../profiles/home-manager.nix
+    ../../profiles/linux-latest.nix
+    ../../profiles/nix-auto-upgrade.nix
+    ../../profiles/nix-unfree.nix
     ../../profiles/nixops.nix
+    ../../profiles/nvidia.nix
     ../../profiles/power.nix
+    ../../profiles/printing.nix
+    ../../profiles/ssh-server.nix
+    ../../profiles/steam.nix
+    ../../profiles/timezone-melbourne.nix
     ../../profiles/virtualisation.nix
+    ../../profiles/x-server-x11.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.efiSupport = true;
+  boot.cleanTmpDir = true;
 
   networking.hostName = "panther";
 
@@ -36,18 +45,10 @@
     defaultLocale = "en_AU.UTF-8";
   };
 
-  services.openssh.enable = true;
-  services.printing.enable = true;
-
   users.users.adam = {
     isNormalUser = true;
     description = "Adam Griffiths";
     extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "libvirtd" "docker" ];
-  };
-
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = false;
   };
 
   # This value determines the NixOS release from which the default
@@ -56,6 +57,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "21.05"; # Did you read the comment?
+  system.stateVersion = "20.09"; # Did you read the comment?
 }
-

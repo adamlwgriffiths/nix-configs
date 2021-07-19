@@ -8,4 +8,8 @@
       sshfs
     ];
   };
+
+  nixpkgs.overlays = [
+    (import ../overlays/nixops.nix)
+  ];
 }

@@ -1,7 +1,0 @@
-# put direnv nix-shell dependencies inside the path
-use_nix() {
-  source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  export NIX_PATH=/nix/var/nix/profiles/per-user/$USER/channels
-  export NIX_PROFILE=$PWD/.direnv/nix
-  load_prefix "$PWD/.direnv/nix"
-}

@@ -36,13 +36,4 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-
-  # https://nixos.wiki/wiki/Printing
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
-  services.printing.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    nssmdns
-  ];
 }
