@@ -5,27 +5,49 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs = {
+    overlays = [
+      (self: super: {
+        linuxPackages_latest = super.linuxPackages_latest.extend (self: super: {
+          nvidia_x11 = super.nvidia_x11.overrideAttrs (attrs: {
+            patches = [
+              (pkgs.fetchpatch {
+                url = "https://raw.githubusercontent.com/Frogging-Family/nvidia-all/master/patches/kernel-5.14.patch";
+                sha256 = "042zyspddka1acmli9l4h4cbzpfgq8a9lcdwjgwjr0npdgqk3j3f";
+                stripLen = 2;
+                extraPrefix = "kernel/";
+              })
+            ];
+          });
+        });
+      })
+    ];
+  };
+
   imports = [
     ./hardware-configuration.nix
     ./networking.nix
+    ../../profiles/application-steam.nix
     ../../profiles/audio.nix
     #../../profiles/boot-splash.nix
-    ../../profiles/corsair-kb.nix
+    ../../profiles/device-corsair-kb.nix
+    ../../profiles/device-ios.nix
+    ../../profiles/desktop-gnome.nix
+    ../../profiles/desktop-x11.nix
     ../../profiles/environment.nix
-    ../../profiles/gnome.nix
+    ../../profiles/hardware-nvidia.nix
     ../../profiles/home-manager.nix
-    ../../profiles/linux-latest.nix
-    ../../profiles/nix-auto-upgrade.nix
+    # breaks nvidia on 20.09
+    ../../profiles/kernel-linux-latest.nix
+    ../../profiles/keyboard-us.nix
+    #../../profiles/nix-auto-upgrade.nix
     ../../profiles/nix-unfree.nix
     ../../profiles/nixops.nix
-    ../../profiles/nvidia.nix
     ../../profiles/power.nix
     ../../profiles/printing.nix
     ../../profiles/ssh-server.nix
-    ../../profiles/steam.nix
     ../../profiles/timezone-melbourne.nix
     ../../profiles/virtualisation.nix
-    ../../profiles/x-server-x11.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -35,15 +57,6 @@
   boot.cleanTmpDir = true;
 
   networking.hostName = "panther";
-
-  # Select internationalisation properties.
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
-  i18n = {
-    defaultLocale = "en_AU.UTF-8";
-  };
 
   users.users.adam = {
     isNormalUser = true;

@@ -9,7 +9,7 @@
     };
 
     systemPackages = with pkgs; [
-      gnome3.adwaita-icon-theme
+      gnome.adwaita-icon-theme
     ];
   };
 
@@ -18,11 +18,11 @@
     xserver = {
       # Enable the GNOME Desktop Environment.
       displayManager.gdm.enable = true;
-      desktopManager.gnome3.enable = true;
+      desktopManager.gnome.enable = true;
     };
 
     udev.packages = with pkgs; [
-      gnome3.gnome-settings-daemon
+      gnome.gnome-settings-daemon
     ];
   };
 }

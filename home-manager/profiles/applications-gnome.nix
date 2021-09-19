@@ -2,16 +2,16 @@
 
 {
   home.packages = with pkgs; [
-    gnome3.aisleriot
-    gnome3.gnome-books
-    gnome3.gnome-chess
-    gnome3.gnome-calendar
-    gnome3.gnome-mines
-    gnome3.gnome-nettool
-    gnome3.gnome-sudoku
-    gnome3.gnome-tweaks
-    gnome3.networkmanagerapplet
-    gnome3.polari
+    gnome.aisleriot
+    gnome.gnome-books
+    gnome.gnome-chess
+    gnome.gnome-calendar
+    gnome.gnome-mines
+    gnome.gnome-nettool
+    gnome.gnome-sudoku
+    gnome.gnome-tweaks
+    gnome.networkmanagerapplet
+    gnome.polari
 
     # browser
     epiphany
