@@ -38,7 +38,7 @@
     ../../profiles/hardware-nvidia.nix
     ../../profiles/home-manager.nix
     # breaks nvidia on 20.09
-    ../../profiles/kernel-linux-latest.nix
+    #../../profiles/kernel-linux-latest.nix
     ../../profiles/keyboard-us.nix
     #../../profiles/nix-auto-upgrade.nix
     ../../profiles/nix-unfree.nix
