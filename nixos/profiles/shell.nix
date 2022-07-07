@@ -5,7 +5,7 @@
     systemPackages = with pkgs; [
       git
       killall
-      links
+      links2
       neovim
       ntfs3g
       parted
@@ -16,7 +16,14 @@
       wol
       vim
       zip
+
+      nushell
     ];
+
+    # list of valid shells
+    # if a user's shell is not in this list, they are considered to be a system account
+    # and will not appear in GDM, etc
+    shells = with pkgs; [ bashInteractive zsh nushell ];
 
     variables = {
       EDITOR = "nvim";

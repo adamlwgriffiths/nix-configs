@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-let 
+let
   eth-device = "enp0s31f6";
 in {
   imports = [
@@ -23,17 +23,20 @@ in {
   virtualisation = {
     docker.enable = true;
 
+    spiceUSBRedirection.enable = true;
+
     libvirtd = {
       enable = true;
 
-      qemuOvmf = true;
-      qemuRunAsRoot = false;
-
       onBoot = "ignore";
       onShutdown = "shutdown";
+
+      qemu = {
+        ovmf.enable = true;
+        runAsRoot = false;
+      };
     };
   };
 
   networking.firewall.checkReversePath = false;
 }
-

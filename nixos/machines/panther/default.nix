@@ -7,20 +7,6 @@
 {
   nixpkgs = {
     overlays = [
-      (self: super: {
-        linuxPackages_latest = super.linuxPackages_latest.extend (self: super: {
-          nvidia_x11 = super.nvidia_x11.overrideAttrs (attrs: {
-            patches = [
-              (pkgs.fetchpatch {
-                url = "https://raw.githubusercontent.com/Frogging-Family/nvidia-all/master/patches/kernel-5.14.patch";
-                sha256 = "042zyspddka1acmli9l4h4cbzpfgq8a9lcdwjgwjr0npdgqk3j3f";
-                stripLen = 2;
-                extraPrefix = "kernel/";
-              })
-            ];
-          });
-        });
-      })
     ];
   };
 
@@ -34,7 +20,6 @@
     ../../profiles/device-ios.nix
     ../../profiles/desktop-gnome.nix
     ../../profiles/desktop-x11.nix
-    ../../profiles/environment.nix
     ../../profiles/hardware-nvidia.nix
     ../../profiles/home-manager.nix
     # breaks nvidia on 20.09
@@ -43,8 +28,10 @@
     #../../profiles/nix-auto-upgrade.nix
     ../../profiles/nix-unfree.nix
     ../../profiles/nixops.nix
+    ../../profiles/nixops-raspberrypi.nix
     ../../profiles/power.nix
     ../../profiles/printing.nix
+    ../../profiles/shell.nix
     ../../profiles/ssh-server.nix
     ../../profiles/timezone-melbourne.nix
     ../../profiles/virtualisation.nix
@@ -62,6 +49,9 @@
     isNormalUser = true;
     description = "Adam Griffiths";
     extraGroups = [ "wheel" "video" "audio" "disk" "networkmanager" "libvirtd" "docker" ];
+    # direnv / conda don't work, not ready for prime time
+    #shell = pkgs.nushell;
+    shell = pkgs.bash;
   };
 
   # This value determines the NixOS release from which the default

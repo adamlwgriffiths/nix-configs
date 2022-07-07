@@ -6,6 +6,7 @@
 
 {
   imports = [
+    # required for networkmanager.profiles {} below
     (import (builtins.fetchTarball https://github.com/jmackie/nixos-networkmanager-profiles/archive/master.tar.gz))
   ];
 
@@ -27,7 +28,9 @@
 
     # Open ports in the firewall.
     firewall = {
-      enable = true;
+      # annoying af not being able to control this
+      # without making a new system image
+      enable = false;
       allowPing = true;
       allowedTCPPorts = [
         9999 # obs-studio
@@ -61,4 +64,3 @@
     };
   };
 }
-

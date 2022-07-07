@@ -8,5 +8,7 @@
 
   environment.systemPackages = with pkgs; [
     nssmdns
+    canon-cups-ufr2
+    cnijfilter2
   ];
 }

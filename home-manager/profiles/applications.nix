@@ -1,20 +1,9 @@
 { pkgs, ... }:
 
-let
-  unstable = import <unstable> {};
-in {
-  #nixpkgs.config.packageOverrides = pkgs: {
-  #  ffmpeg-full = unstable.ffmpeg-full.override {
-  #    #lame=true;
-  #    srt=true;
-  #    #x264=true;
-  #    #x265=true;
-  #  };
-  #};
-  nixpkgs.overlays = [
-    (import ../overlays/obs-studio.nix)
-  ];
-
+#let
+#  unstable = import <unstable> {};
+#in {
+{
   home.packages = with pkgs; [
     bitwarden
     bitwarden-cli
@@ -24,13 +13,16 @@ in {
     inkscape
     mumble
     pinta
-    virt-manager
     xclip
+
+    # virtual machines
+    virt-manager
 
     chromium
 
     obs-studio
-  ] ++ (with unstable; [
-    #obs-studio
-  ]);
+#  ] ++ (with unstable; [
+#    #obs-studio
+#  ]);
+  ];
 }

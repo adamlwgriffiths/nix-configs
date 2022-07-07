@@ -10,7 +10,7 @@
     gnome.gnome-nettool
     gnome.gnome-sudoku
     gnome.gnome-tweaks
-    gnome.networkmanagerapplet
+    pkgs.networkmanagerapplet
     gnome.polari
 
     # browser

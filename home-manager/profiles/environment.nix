@@ -10,16 +10,21 @@
   # https://github.com/nix-community/nix-direnv
   programs.direnv = {
     enable = true;
-    enableNixDirenvIntegration = true;
+    enableBashIntegration = true;
+    #nix-direnv.enable = true;
   };
   services.lorri.enable = true;
+
+  #programs.nushell = {
+  #  enable = true;
+  #};
 
   programs.bash = {
     enable = true;
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
-    bashrcExtra = ''
-      eval "$(direnv hook bash)"
-    '';
+  #  bashrcExtra = ''
+  #    eval "$(direnv hook bash)"
+  #  '';
 
     shellAliases = {
       ll = "ls -l";
@@ -38,4 +43,3 @@
     EDITOR = "nvim";
   };
 }
-
