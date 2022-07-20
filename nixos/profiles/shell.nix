@@ -16,8 +16,6 @@
       wol
       vim
       zip
-
-      nushell
     ];
 
     # list of valid shells

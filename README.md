@@ -14,8 +14,9 @@ $ ln -s /path/to/nixos/machine/panther/default.nix /etc/nixos/configuration.nix
 $ exit
 $ ln -s /path/to/home-manager/home.nix ~/.config/nixpkgs/home.nix
 ```
-3. Enable home-manager
+3. Enable nixos-hardware / home-manager
 ```
+$ nix-channel --add https://github.com/NixOS/nixos-hardware/archive/master.tar.gz nixos-hardware
 $ nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
 $ nix-channel --update
 ```

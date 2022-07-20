@@ -6,14 +6,11 @@
     ../../profiles/applications-gnome.nix
     ../../profiles/applications-steam.nix
     ../../profiles/applications-synology.nix
-    ../../profiles/applications-video-editing.nix
     ../../profiles/applications.nix
     ../../profiles/desktop-gnome.nix
     ../../profiles/development.nix
     ../../profiles/environment.nix
     ../../profiles/fonts.nix
-    ../../profiles/games-roguelikes.nix
-    ../../profiles/games.nix
     ../../profiles/network.nix
   ];
 

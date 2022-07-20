@@ -11,30 +11,32 @@
   };
 
   imports = [
-    ./hardware-configuration.nix
+    # core
     ./networking.nix
-    ../../profiles/application-steam.nix
+    ../../profiles/nix-unfree.nix
+    ../../profiles/home-manager.nix
+    # hardware
+    ./hardware-configuration.nix
+    <nixos-hardware/common/cpu/intel/cpu_only.nix>
+    <nixos-hardware/common/pc/ssd>
     ../../profiles/audio.nix
-    #../../profiles/boot-splash.nix
+    ../../profiles/hardware-nvidia.nix
     ../../profiles/device-corsair-kb.nix
-    ../../profiles/device-ios.nix
+    ../../profiles/keyboard-us.nix
+    ../../profiles/timezone-melbourne.nix
+    # system
+    #../../profiles/boot-splash.nix
     ../../profiles/desktop-gnome.nix
     ../../profiles/desktop-x11.nix
-    ../../profiles/hardware-nvidia.nix
-    ../../profiles/home-manager.nix
-    # breaks nvidia on 20.09
-    #../../profiles/kernel-linux-latest.nix
-    ../../profiles/keyboard-us.nix
-    #../../profiles/nix-auto-upgrade.nix
-    ../../profiles/nix-unfree.nix
     ../../profiles/nixops.nix
     ../../profiles/nixops-raspberrypi.nix
     ../../profiles/power.nix
     ../../profiles/printing.nix
     ../../profiles/shell.nix
     ../../profiles/ssh-server.nix
-    ../../profiles/timezone-melbourne.nix
     ../../profiles/virtualisation.nix
+    # software
+    ../../profiles/application-steam.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

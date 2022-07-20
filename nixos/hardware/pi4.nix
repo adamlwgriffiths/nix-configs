@@ -9,7 +9,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_rpi4;
   boot.tmpOnTmpfs = true;
   boot.initrd.availableKernelModules = [
     # Standard SCSI stuff.

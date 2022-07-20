@@ -10,8 +10,8 @@
     gnome.gnome-nettool
     gnome.gnome-sudoku
     gnome.gnome-tweaks
-    pkgs.networkmanagerapplet
     gnome.polari
+    networkmanagerapplet
 
     # browser
     epiphany
