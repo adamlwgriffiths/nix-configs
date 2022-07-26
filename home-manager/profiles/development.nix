@@ -8,10 +8,9 @@
     conda
     docker-compose
     gnumake
-    kicad
     niv
     nix-index
-    python38Full
+    python3Full
     sshfs
 
     # editors
@@ -21,4 +20,25 @@
     # demo tools
     asciinema
   ];
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode;
+    extensions = with pkgs.vscode-extensions; [
+      # nix-shell selector
+      arrterian.nix-env-selector
+
+      # python
+      ms-python.python
+      ms-pyright.pyright
+
+      # nix
+      bbenoist.nix
+
+      # collaboration
+      ms-vsliveshare.vsliveshare
+    ];
+    userSettings = {
+    };
+  };
 }

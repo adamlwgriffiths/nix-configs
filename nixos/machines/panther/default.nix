@@ -17,7 +17,7 @@
     ../../profiles/home-manager.nix
     # hardware
     ./hardware-configuration.nix
-    <nixos-hardware/common/cpu/intel/cpu_only.nix>
+    <nixos-hardware/common/cpu/intel/cpu-only.nix>
     <nixos-hardware/common/pc/ssd>
     ../../profiles/audio.nix
     ../../profiles/hardware-nvidia.nix
@@ -25,7 +25,7 @@
     ../../profiles/keyboard-us.nix
     ../../profiles/timezone-melbourne.nix
     # system
-    #../../profiles/boot-splash.nix
+    ../../profiles/boot-splash.nix
     ../../profiles/desktop-gnome.nix
     ../../profiles/desktop-x11.nix
     ../../profiles/nixops.nix

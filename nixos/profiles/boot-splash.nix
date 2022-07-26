@@ -4,19 +4,18 @@
   boot = {
     plymouth.enable = true;
 
-    kernelParams = [
-      "quiet"
-      "plymouth.ignore-serial-consoles"
-      "vt.global_cursor_default=0"
-    ];
+    #kernelParams = [
+    #  "quiet"
+    #  "plymouth.ignore-serial-consoles"
+    #  "vt.global_cursor_default=0"
+    #];
 
-    extraModprobeConfig = ''
-      options nvidia_drm modeset=1
-    '';
+    #extraModprobeConfig = ''
+    #  options nvidia_drm modeset=1
+    #'';
 
-    loader.grub = {
-      gfxmodeEfi = "3440x1440";
-    };
+    #loader.grub = {
+    #  gfxmodeEfi = "3440x1440";
+    #};
   };
 }
-

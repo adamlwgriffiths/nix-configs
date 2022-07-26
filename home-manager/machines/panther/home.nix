@@ -2,7 +2,9 @@
 
 {
   imports = [
+    ../../profiles/applications-3d-graphics.nix
     ../../profiles/applications-chat.nix
+    ../../profiles/applications-electronics.nix
     ../../profiles/applications-gnome.nix
     ../../profiles/applications-steam.nix
     ../../profiles/applications-synology.nix
