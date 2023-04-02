@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     gnome.aisleriot
-    gnome.gnome-books
+    #gnome.gnome-books
     gnome.gnome-chess
     gnome.gnome-calendar
     gnome.gnome-mines
@@ -15,5 +15,9 @@
 
     # browser
     epiphany
+
+    # art
+    drawing
+    krita
   ];
 }

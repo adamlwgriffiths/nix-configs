@@ -37,6 +37,15 @@
 
       # collaboration
       ms-vsliveshare.vsliveshare
+
+      # file formats
+      tamasfe.even-better-toml
+
+      # clojure
+      betterthantomorrow.calva
+
+      # ocaml
+      ocamllabs.ocaml-platform
     ];
     userSettings = {
     };

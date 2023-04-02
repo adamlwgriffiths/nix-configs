@@ -3,9 +3,12 @@
 {
   imports = [
     ../../profiles/applications-3d-graphics.nix
+    ../../profiles/applications-audio-editing.nix
     ../../profiles/applications-chat.nix
     ../../profiles/applications-electronics.nix
     ../../profiles/applications-gnome.nix
+    ../../profiles/applications-office.nix
+    ../../profiles/applications-os-images.nix
     ../../profiles/applications-steam.nix
     ../../profiles/applications-synology.nix
     ../../profiles/applications-video-editing.nix
@@ -29,4 +32,8 @@
   programs.home-manager = {
     enable = true;
   };
+
+  home.username = "adam";
+  home.homeDirectory = "/home/adam";
+  home.stateVersion = "22.11";
 }

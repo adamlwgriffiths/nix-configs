@@ -22,24 +22,34 @@
     # https://github.com/paperwm/PaperWM/issues/376
     gnomeExtensions.paperwm
     #paperwm
-    gnomeExtensions.cleaner-overview
+    #gnomeExtensions.cleaner-overview
     gnomeExtensions.vertical-overview
     #gnomeExtensions.disable-workspace-switch-animation-for-gnome-40
 
     #gnomeExtensions.remove-dropdown-arrows
-    gnomeExtensions.sound-output-device-chooser
+    #gnomeExtensions.sound-output-device-chooser
 
     gnomeExtensions.dual-shock-4-battery-percentage
 
     # reposition notifications
-    gnomeExtensions.panel-osd
+    #gnomeExtensions.panel-osd
     gnomeExtensions.notification-banner-position
-    gnomeExtensions.top-panel-notification-icons
-    gnomeExtensions.focusli
+    #gnomeExtensions.top-panel-notification-icons
+    #gnomeExtensions.focus
 
     gnomeExtensions.bring-out-submenu-of-power-offlogout-button
 
     gnomeExtensions.tray-icons-reloaded
+
+    gnomeExtensions.color-picker
+
+    # dconf viewer
+    gnome.dconf-editor
+
+    # wake on lan / server status
+    # requires wakeonlan
+    #wakeonlan
+    #gnomeExtensions.home-server
 
     # speech synthesis
     speechd

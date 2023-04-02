@@ -20,7 +20,7 @@
     <nixos-hardware/common/cpu/intel/cpu-only.nix>
     <nixos-hardware/common/pc/ssd>
     ../../profiles/audio.nix
-    ../../profiles/hardware-nvidia.nix
+    ../../hardware/nvidia.nix
     ../../profiles/device-corsair-kb.nix
     ../../profiles/keyboard-us.nix
     ../../profiles/timezone-melbourne.nix

@@ -19,6 +19,7 @@
     virt-manager
 
     chromium
+    firefox
 
     obs-studio
 #  ] ++ (with unstable; [

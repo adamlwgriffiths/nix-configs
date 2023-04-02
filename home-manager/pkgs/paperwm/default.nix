@@ -1,13 +1,16 @@
 
+# NOT USED
+# look in overlays/paperwm.nix
+
 { lib, stdenv }:
 
 stdenv.mkDerivation rec {
  pname = "gnome-shell-extension-paperwm";
- version = "pre-40.0";
+ version = "gnome-42.20221101";
 
  src = builtins.fetchGit {
    url = https://github.com/paperwm/paperwm.git;
-   ref = "next-release";
+   ref = "gnome-42";
  };
 
  uuid = "paperwm@hedning:matrix.org";

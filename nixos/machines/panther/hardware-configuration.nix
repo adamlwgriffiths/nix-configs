@@ -32,7 +32,7 @@
     [ { device = "/dev/disk/by-uuid/0906ed71-45a6-4d56-842e-4b1097ff3ac5"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 6;
+  nix.settings.max-jobs = lib.mkDefault 6;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # High-DPI console
   console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
